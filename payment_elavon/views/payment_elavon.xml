@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <template id="elavon_acquirer_button">
+            <form t-if="acquirer" t-att-action="tx_url" method="post" target="_self">
+				<input type="hidden" name="MERCHANT_ID" t-att-value="tx_values['MERCHANT_ID']"/>
+                <!-- submit -->
+                <button type="submit" width="100px"
+                    t-att-class="submit_class">
+                    <img t-if="not submit_txt" src="/payment_elavon/static/src/img/elavon_icon.png"/>
+                    <span t-if="submit_txt"><t t-esc="submit_txt"/> <span class="fa fa-long-arrow-right"/></span>
+                </button>
+            </form>
+        </template>
+
+    </data>
+</openerp>
